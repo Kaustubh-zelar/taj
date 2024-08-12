@@ -1,0 +1,345 @@
+.img1 {
+    position: absolute;
+    max-width: 100vw;
+    top: 0px;
+    left: 0px;
+
+}
+.head{
+   position: fixed;
+   justify-content: space-evenly;
+   margin-top: 0px;
+    z-index: 999999999;
+}
+
+
+.active a {
+    font-family: "Merriweather", serif;
+    text-decoration: none;
+    color: aliceblue;
+    padding-left: 20px;
+}
+.tt{
+ margin: 0px 20px;
+     max-width: 25px;
+     max-height: 25px;
+
+    z-index: 99999999999;
+}
+.hh{
+    max-width: 75px;
+    max-height: 75px;
+}
+.active{
+    margin-left: 100px; 
+}
+.dd{
+    position: fixed; 
+
+    top: 25px;
+    right: 115px; 
+}
+body{
+    overflow-x: hidden;
+}
+.dt{
+  
+    border:none;
+ background-color: rgb(197, 179, 13);
+    padding:10px 10px 10px 10px;
+    margin-left: 20px;
+}
+
+.ht{
+    margin-right: 15px;
+}
+#hd{
+    margin-left: -15px;
+   
+}
+.Content h1{
+    text-align: center;
+   margin-top: 40%;
+ 
+    color: black;
+}
+.Content p{
+    text-align: center;
+
+    color: black;
+}
+.Content button{
+    border: none;
+    background-color: white;
+}
+.rotate-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.5s ease; 
+     font-size: 15px;
+    color: aliceblue;
+     border: none;
+     background-color: inherit;
+    transform-origin: center; 
+}
+
+
+.rotate-button.rotated {
+    transform: rotate(180deg); 
+}
+
+.header.scrolled {
+    background-color: rgb(255, 255, 255);
+    margin-left:0;
+}
+#rotate-button{
+
+    border: none;
+    background-color: none;
+
+}
+#paragraph{
+    margin-left: 30%;
+    margin-right: 30%;
+}
+#rotate-button {
+    transition: transform 0.5s ease;
+}
+.val{
+    margin-top: 50px;
+     margin-left: 45%;
+}
+.inc {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+ 
+    border: 1px solid rgb(197, 179, 13);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.inc h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+margin-top: 12%;
+    gap: 10px; 
+    width: 100%; 
+}
+
+.items div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.items img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+.join{
+    margin-left: 45%;
+    text-align: center;
+    border: none;
+    background-color: rgb(197, 179, 13) ;
+    padding: 8px;
+    
+}
+.Container {
+    background-color: #d0d0d0;
+    padding: 20px;
+
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px;
+}
+h1 {
+    margin: 0;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row div {
+    flex: 1;
+    margin: 0 10px;
+}
+input[type="text"], input[type="number"] {
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 8px;
+    width: 100%;
+   
+    margin: 0;
+}
+.date-container {
+    display: flex;
+    align-items: center;
+}
+.calendar-button {
+    cursor: pointer;
+    margin-left: 10px;
+    background: url('calendar-icon.png') no-repeat center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-size: contain;
+}
+.container {
+    background-color: gray;
+    text-align: center;
+    margin-top: 50px;
+}
+.header {
+    background-color:grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.toggle-button {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.total-summary {
+    text-align: left;
+    margin: auto;
+    font-size: 18px;
+}
+.modal {
+    background-color: grey;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+.dropdown {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.button {
+    font-size: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.counter {
+    font-size: 20px;
+    margin: 0 10px;
+}
+.rotate {
+    transform: rotate(180deg);
+}
+.close-button {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#yy{
+    margin-left: 10%;
+}
+#list {
+    display: none;
+    margin-top: 10px;
+}
+.pointer {
+    margin: 5px 0;
+}
+#myList{
+    margin-left: 12%;
+}
+cn {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.drop {
+    position: relative;
+    margin-right: 20px; /* Space between dropdown and search box */
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.drop-content input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+.drop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.drop:hover .drop-content {
+    display: block;
+}
+
+.search-box {
+    flex: 1; /* Takes up remaining space */
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+

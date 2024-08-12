@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="A.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+
+    <img class="img1" src="Taj1.png" alt="">
+    <div class="head">
+       <div class="tt"> <img  class="hh"src="Taj.png" alt=""></div>
+       <div class="active">
+          <a  href="#home">DESTINATIONS</a>
+          <a  href="#HOTELS">HOTELS</a>
+          <a  href="#DINING">DINING</a>
+          <a  href="#OFFERS">OFFERS</a>
+          <a  href="#MEMBERSHIP">MEMBERSHIP<button class="rotate-button">⌄</button></a>
+          <a  href="#MORE">MORE<button class="rotate-button">⌄</button></a>
+          <div class="dd">
+          <a  class="ht" href="#Login">LOGIN/JOIN</a>
+            <button class="dt"><a id="hd"href="#BOOK">BOOK A STAY</a></button>
+        </div>
+        </div>
+    </div>
+        
+    <div class="Content">
+        <img id="ipi" src="minus-icon.svg" alt="">
+       <h1>___Enjoy 30% Savings at Our ___<br>
+               Newest Hotels</h1>
+
+               <p id="paragraph">Idulge the explorer in you and set out to discover our newest hotels and novel
+                experiences. Enjoy exclusive 30% savings<button id="rotate-button"><img src="more.svg"></button></p>
+
+    </div>    
+
+    <div class="val">
+        <span>Validity</span><br>
+        <img src="CalendarIcon.png" ><span>Round the Year</span>
+    </div>
+
+    <div class="inc">
+        <h3>PACKAGE INCLUSIONS</h3>
+    
+        <div class="items">
+        <div><img src="tag.svg">30% SAVINGS ON STAYS</div>
+        <div><img src="coffe.svg" alt="">DAILY BREAKFAST</div>
+        <div><img src="wifi.svg" alt="">STANDARD WI-FI</div>
+        </div>
+        </div>
+        </div>
+        <div class="Container">
+            <h1>BOOK A STAY</h1>
+            <div class="row">
+                <div>
+                    <input type="text" id="search-bar" placeholder="Search..." onfocus="showDropdown()">
+                    <div id="dropdown" class="dropdown">
+                        <p>Option 1</p>
+                        <p>Option 2</p>
+                        <p>Option 3</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="date-range" placeholder="Select date range">
+                    
+                </div>
+                <div class="container">
+                    <div class="header">
+                        <button class="toggle-button" id="toggleButton">Show Counters</button>
+                        <div class="total-summary">
+                            <p id="totalAdults">Total Adults: 0</p>
+                            <p id="totalChildren">Total Children: 0</p>
+                            <p id="totalRooms">Total Rooms: 0</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="countersModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button" id="closeButton">&times;</span>
+                        <button class="add-room-button" id="addRoomButton">Add Room</button>
+                        <div id="roomsContainer"></div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <span id="yy">*Conditions Apply</span>
+        <div>
+            <h1>Terms and Conditions<button id="tbutton"></button></h1>
+            
+            <ul id="myList" style="display: none;">
+                <li>The offer is applicable across participating hotels for select dates and is subject to availability. Limited rooms are available on the offer. Blackout dates will apply.​</li>
+                <li>Reservations must be booked from the TataNeu App/Dedicated webpage or link.​</li>
+                <li>This promotional rate cannot be used in conjunction with any other promotional offer or negotiated rate.​</li>
+                <li>Extra adults and children will be charged as per the hotel’s standard policy and applicable rates and taxes.​</li>
+                <li>Confirmation of rooms is subject to availability.​</li>
+                <li>The offer is inclusive of accommodation and a buffet breakfast.​</li>
+                <li>The special offer can be utilized for a maximum of 5 rooms with not more than 10 guests at a given time. Reservations exceeding 5 rooms on overlapping dates will be considered as a group booking.​</li>
+                <li>Each hotel reserves the right to refuse bookings that are not as per Terms and Conditions.​</li>
+                <li>All the Terms and Conditions of the NeuPass loyalty programme will apply. For NeuPass programme terms and conditions as well as for eligible spends, please visit www.tajhotels.com/en-in/neupass/</li>
+                <li>NeuPass Members are eligible to earn NeuCoins/points only on bookings made via TataNeu app or login as NeuPass Member on Taj Hotels website. Any bookings made on third party sites will not be eligible for NeuCoins/points.​</li>
+                <li>Additional taxes applicable, as per the taxation norms.​</li>
+                <li>Reservation may be modified online only as per the predefined policy. In case of modification the rates are subject to change and rooms are based on availability.​</li>
+            </ul>
+        </div>
+        <div>
+            <h1>PARTICIPATING HOTELS <br></h1>
+            <div class="cn">
+                <div class="drop">
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Search...">
+                    </div>
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="drop-content">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                        <a href="#">Option 3</a>
+                    </div>
+                </div>
+              
+            </div>
+
+        </div>
+      
+<footer>
+   
+</footer>
+
+        <script src="J.js"></script>
+
+</body>
+</html>
