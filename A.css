@@ -89,10 +89,6 @@ body{
     transform: rotate(180deg); 
 }
 
-.header.scrolled {
-    background-color: rgb(255, 255, 255);
-    margin-left:0;
-}
 #rotate-button{
 
     border: none;
@@ -159,7 +155,7 @@ margin-top: 12%;
     
 }
 .Container {
-    background-color: #d0d0d0;
+    background-color: rgb(226, 226, 226);
     padding: 20px;
 
     margin: 20px auto;
@@ -203,30 +199,33 @@ input[type="text"], input[type="number"] {
     background-size: contain;
 }
 .container {
-    background-color: gray;
+    
     text-align: center;
     margin-top: 50px;
 }
 .header {
-    background-color:grey;
+   
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 .toggle-button {
+    border: none;
+    background-color: none;
     font-size: 20px;
     padding: 10px 20px;
     cursor: pointer;
     transition: transform 0.3s;
 }
 .total-summary {
+   
     text-align: left;
     margin: auto;
     font-size: 18px;
 }
 .modal {
-    background-color: grey;
+    
     display: none;
     position: fixed;
     left: 0;
@@ -239,7 +238,7 @@ input[type="text"], input[type="number"] {
     justify-content: center;
 }
 .modal-content {
-    background-color: white;
+  
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -249,16 +248,20 @@ input[type="text"], input[type="number"] {
     flex-direction: column;
 }
 .dropdown {
+    background-color: #ccc;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 .button {
+    border: none;
+    background-color: none;
     font-size: 20px;
     padding: 5px 10px;
     cursor: pointer;
 }
 .counter {
+    
     font-size: 20px;
     margin: 0 10px;
 }
@@ -271,6 +274,47 @@ input[type="text"], input[type="number"] {
     cursor: pointer;
     margin-bottom: 20px;
 }
+ .dropdown-modal {
+        position: absolute;
+        top: 50px;
+        right: 20px;
+        width: 300px;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        padding: 20px;
+        display: none;
+        z-index: 1000;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .room {
+        margin-top: 10px;
+    }
+
+    .total-summary p {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .container {
+        position: relative;
+        margin: 20px;
+    }
+
+    .toggle-button {
+        margin-left: 20px;
+        cursor: pointer;
+    }
 #yy{
     margin-left: 10%;
 }
@@ -278,68 +322,82 @@ input[type="text"], input[type="number"] {
     display: none;
     margin-top: 10px;
 }
+#st input{
+    background-color: inherit;
+    color: black;
+}
+#mb{
+ border: none;
+ margin-left: 45%;
+ background-color: rgb(197, 179, 13) ;
+ padding:8px;
+
+}
 .pointer {
     margin: 5px 0;
 }
 #myList{
     margin-left: 12%;
 }
-cn {
+
+.sbox { 
+    margin-bottom: 10px; 
+}
+        .img-lst
+         { 
+            display: flex;
+             flex-wrap: wrap; 
+        }
+        .img-item { 
+            margin: 5px;
+            text-align: center;
+         }
+        .img-item img {
+            max-width: 100px;
+             height: auto; 
+             display: block;
+         }
+        .img-item.dsp {
+             display: block;
+             }
+        .img-item.hid { 
+            display: none; 
+        }
+
+
+
+        /* style.css */
+.cont {
     display: flex;
     align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
+    margin-bottom: 10px;
 }
 
-.drop {
-    position: relative;
-    margin-right: 20px; /* Space between dropdown and search box */
-}
-
-.drop-content {
+.text {
     display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    max-height: 200px;
-    overflow-y: auto;
+    margin-right: 10px;
 }
 
-.drop-content input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
+.btn {
+    transition: transform 0.3s ease, margin-right 0.3s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
 }
 
-.drop-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.btn.rot {
+    transform: rotate(180deg);
 }
 
-.drop-content a:hover {
-    background-color: #f1f1f1;
+.btn.mov {
+    margin-right: 0;
 }
 
-.drop:hover .drop-content {
-    display: block;
+.cont.exp {
+    display: flex;
 }
 
-.search-box {
-    flex: 1; /* Takes up remaining space */
+.cont.exp .text {
+    display: inline;
 }
-
-.search-input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-

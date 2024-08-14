@@ -58,9 +58,9 @@
         <div class="Container">
             <h1>BOOK A STAY</h1>
             <div class="row">
-                <div>
+                <div id="st">
                     <input type="text" id="search-bar" placeholder="Search..." onfocus="showDropdown()">
-                    <div id="dropdown" class="dropdown">
+                    <div id="dropdown" class="dropdown" style="display: none;">
                         <p>Option 1</p>
                         <p>Option 2</p>
                         <p>Option 3</p>
@@ -72,19 +72,24 @@
                 </div>
                 <div class="container">
                     <div class="header">
-                        <button class="toggle-button" id="toggleButton">Show Counters</button>
                         <div class="total-summary">
                             <p id="totalAdults">Total Adults: 0</p>
                             <p id="totalChildren">Total Children: 0</p>
                             <p id="totalRooms">Total Rooms: 0</p>
                         </div>
+                        <button class="toggle-button" id="toggleButton">Show Counters</button>
+                    </div>
+                    
+                    <!-- Dropdown modal for counters -->
+                    <div id="countersDropdown" class="dropdown-modal">
+                        <button id="closeButton" class="close-button">X</button>
+                        <div id="roomsContainer"></div>
+                        <button id="addRoomButton">Add Room</button>
                     </div>
                 </div>
-                <div id="countersModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close-button" id="closeButton">&times;</span>
-                        <button class="add-room-button" id="addRoomButton">Add Room</button>
-                        <div id="roomsContainer"></div>
+            
+                </div>
+                <div><button id="mb">LOGIN/JOIN</button></div>
                     </div>
                 </div>
             
@@ -109,30 +114,50 @@
                 <li>Reservation may be modified online only as per the predefined policy. In case of modification the rates are subject to change and rooms are based on availability.​</li>
             </ul>
         </div>
-        <div>
-            <h1>PARTICIPATING HOTELS <br></h1>
-            <div class="cn">
-                <div class="drop">
-                    <div class="search-box">
-                        <input type="text" class="search-input" placeholder="Search...">
-                    </div>
-                    <button class="dropbtn">Dropdown</button>
-                    <div class="drop-content">
-                        <a href="#">Option 1</a>
-                        <a href="#">Option 2</a>
-                        <a href="#">Option 3</a>
-                    </div>
-                </div>
-              
-            </div>
+        <h1>Participating Hotels</h1>
+        
+        <input type="text" id="sbox" class="sbox" placeholder="Search images...">
+        
 
+        <div class="img-lst">
+            <div class="img-item" data-keys="Taj City Centre, Patna">
+                <img src="Taj1.png" alt="Cat">
+                <div class="cont">
+                    <span class="text" data-text="This is the text for button 3"></span>
+                    <button class="btn" data-text="This is the text for button 3"><img src="more.svg"></button>
+            </div>
+            <div class="img-item" data-keys="Taj Malabar Resort & Spa, Cochin">
+                <img src="pic2.webp" alt="Dog">
+                <div class="cont">
+                    <span class="text" data-text="This is the text for button 3"></span>
+                    <button class="btn" data-text="This is the text for button 3"><img src="more.svg"></button>         
+                   </div>
+            <div class="img-item" data-keys="Ginger Nagpur, Airport Road">
+                <img src="pic3.webp" alt="Bird">
+                <div class="cont">
+                    <span class="text" data-text="This is the text for button 3"></span>
+                    <button class="btn" data-text="This is the text for button 3"><img src="more.svg"></button> </div>
+            <div class="img-item" data-keys="amã Stays & Trails Butterfly Villa, Nashik">
+                <img src="pic4.webp" alt="Fish">
+                <div class="cont">
+                    <span class="text" data-text="This is the text for button 3"></span>
+                    <button class="btn" data-text="This is the text for button 3"><img src="more.svg"></button>          
+                  </div>
+            <div class="img-item" data-keys="amã Stays & Trails Vivid Foliage, Kasaragod">
+                <img src="pic5.webp" alt="Horse">
+                <div class="cont">
+                    <span class="text" data-text="This is the text for button 3"></span>
+                    <button class="btn" data-text="This is the text for button 3"><img src="more.svg"></button>         
+                   </div>
         </div>
-      
+    
+        
+        <script src="J.js"></script>
 <footer>
-   
+   <div></div>
 </footer>
 
-        <script src="J.js"></script>
+ 
 
 </body>
 </html>
