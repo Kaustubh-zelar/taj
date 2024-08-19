@@ -40,33 +40,43 @@ document.addEventListener('DOMContentLoaded', function () {
    
     handleScroll();
 });
+document.querySelectorAll('.img-item').forEach(item => {
+    let rotation = 0;
+    let extended = false;
+    const paragraph = item.querySelector('.paragraph');
+    const button = item.querySelector('.rotate-button');
+    let originalText = paragraph.textContent.trim().replace(button.textContent.trim(), '');
 
-let rotation = 0;
-        let extended = false;
-        const paragraph = document.getElementById('paragraph');
-        const button = document.getElementById('rotate-button');
-        const extendedText = ' on breakfast-inclusive rates and celebrate new beginnings with us.';
-        const originalText = paragraph.textContent.replace(button.textContent, '').trim();
+    const extendedTextMap = {
+        'Embrace the allure of Taj City Centre, Patna where history': ' meets modernity in a vibrant urban setting, offering luxury and comfort at every turn.',
+        'Dive into bliss at Taj Malabar Resort & Spa, Kochi, where every': ' moment is a blend of heritage and tranquility, overlooking the serene waters of the Arabian Sea.',
+        'Explore the charm of Nagpur, while you unwind to an unparalleled': ' experience at Ginger, a short drive away from Nagpur Airport.',
+        'Nestled within Deolali\'s tranquil surroundings in Nashik, Butterfly': ' Villa offers a serene sanctuary for nature lovers seeking refuge from urban chaos.',
+        'This villa in Kerala has an infinity pool with a scenic view': ' , a rainwater harvesting pond, and spacious lawns with landscaped paths. The entry façade includes a mesh wall and a swing seating area, providing an ideal spot to capture the picturesque Western Ghats for the guests.'
+    };
 
-        function toggleText() {
-            rotation = (rotation + (extended ? -180 : 180)) % 360;
-            button.style.transform = `rotate(${rotation}deg)`;
+    const extendedText = extendedTextMap[originalText.trim()];
 
-            if (extended) {
-                paragraph.textContent = originalText;
-            } else {
-                paragraph.textContent = originalText + extendedText;
-            }
+    function toggleText() {
+        rotation = (rotation + (extended ? -180 : 180)) % 360;
+        button.style.transform = `rotate(${rotation}deg)`;
 
-            extended = !extended;
-
-            const buttonClone = button.cloneNode(true);
-            buttonClone.addEventListener('click', toggleText);
-            button.remove();
-            paragraph.appendChild(buttonClone);
+        if (extended) {
+            
+            paragraph.textContent = originalText;
+            paragraph.appendChild(button); 
+        } else {
+            
+            paragraph.textContent = originalText + extendedText;
+            paragraph.appendChild(button);
         }
 
-        button.addEventListener('click', toggleText);
+        extended = !extended;
+    }
+
+    button.addEventListener('click', toggleText);
+});
+
 
 function showDropdown() {
     document.getElementById('dropdown').style.display = 'block';
@@ -203,7 +213,7 @@ document.getElementById('tbutton').addEventListener('click', function() {
 
 document.getElementById('sbox').addEventListener('input', function() {
     let filter = this.value.toLowerCase();
-    console.log('Filtering with:', filter); // Debugging line
+    console.log('Filtering with:', filter);
     document.querySelectorAll('.img-item').forEach(item => {
         let keys = item.getAttribute('data-keys').toLowerCase().split(',');
         if (keys.some(key => key.includes(filter))) {
@@ -218,15 +228,120 @@ document.getElementById('sbox').addEventListener('input', function() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const cont = btn.closest('.cont');
-            const txt = cont.querySelector('.text');
-            cont.classList.toggle('exp');
-            txt.textContent = btn.getAttribute('data-text');
-            btn.classList.toggle('rot');
-            btn.classList.toggle('mov');
-        });
-    });
+const btn = document.querySelector('.xyz');
+const extTxt = document.querySelector('.def');
+const orgTxt = document.querySelector('.ghi');
+const parentDiv = document.querySelector('.abc');
+
+btn.addEventListener('click', function() {
+    this.classList.toggle('rot');
+    extTxt.classList.toggle('shw');
+
+    if (this.classList.contains('rot')) {
+        extTxt.appendChild(this);  
+    } else {
+        parentDiv.appendChild(this); 
+    }
 });
+
+
+
+
+
+const spaceImages = [
+    {
+        src: '101.webp',
+        heading: 'Welcome to Image 101',
+        text: 'Enjoy special room rates, earn and redeem NeuCoins and indulge in exceptional benefits with NeuPass Loyalty Program.'
+    },
+    {
+        src: '102.webp',
+        heading: 'Discover Image 102',
+        text: 'This is the text for Image 2.',
+        extendedText: 'This is the extended text for Image 2.'
+    },
+    {
+        src: '103.webp',
+        heading: 'Explore Image 103',
+        text: 'This is the text for Image 3.',
+        extendedText: 'This is the extended text for Image 3.'
+    },
+    {
+        src: '104.webp',
+        heading: 'Experience Image 104',
+        text: 'This is the text for Image 4.'
+    },
+    {
+        src: '105.webp',
+        heading: 'Uncover Image 105',
+        text: 'This is the text for Image 5.',
+        extendedText: 'This is the extended text for Image 5.'
+    },
+    {
+        src: '106.webp',
+        heading: 'Journey through Image 106',
+        text: 'This is the text for Image 6.',
+        extendedText: 'This is the extended text for Image 6.'
+    }
+];
+
+let currentPlanetIndex = 0;
+
+const cosmicBg = document.getElementById('cosmic-bg');
+const planetImg = document.getElementById('planet-img');
+const planetDesc = document.getElementById('planet-desc');
+const planetHeading = document.getElementById('planet-heading'); // New element for heading
+const infoStar = document.getElementById('info-star');
+const extendedText = document.getElementById('extended-text');
+
+document.getElementById('left-star').addEventListener('click', () => {
+    currentPlanetIndex = (currentPlanetIndex === 0) ? spaceImages.length - 1 : currentPlanetIndex - 1;
+    updateSpaceContent();
+});
+  
+document.getElementById('right-star').addEventListener('click', () => {
+    currentPlanetIndex = (currentPlanetIndex === spaceImages.length - 1) ? 0 : currentPlanetIndex + 1;
+    updateSpaceContent();
+});
+
+infoStar.addEventListener('click', () => {
+    toggleText(infoStar);
+});
+
+function updateSpaceContent() {
+    const current = spaceImages[currentPlanetIndex];
+    cosmicBg.src = current.src;
+    planetImg.src = current.src;
+    planetDesc.textContent = current.text;
+    planetHeading.textContent = current.heading; // Update heading
+
+    // Show or hide the button based on the current image
+    const showButton = ['102.webp', '103.webp', '105.webp', '106.webp'].includes(current.src);
+
+    if (showButton) {
+        infoStar.style.display = 'block';
+        extendedText.style.display = 'none';
+        infoStar.classList.remove('rotate');
+    } else {
+        infoStar.style.display = 'none';
+        extendedText.style.display = 'none';
+        infoStar.classList.remove('rotate');
+    }
+}
+
+function toggleText(button) {
+    const isExtended = extendedText.style.display === 'block';
+    
+    if (isExtended) {
+        extendedText.style.display = 'none';
+        button.classList.remove('rotate');
+    } else {
+        extendedText.style.display = 'block';
+        button.classList.add('rotate');
+        // Move button to the end of the extended text
+        document.querySelector('.text-vortex').appendChild(button);
+    }
+}
+
+// Initialize content
+updateSpaceContent();

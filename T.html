@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="A.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="/en-in/_next/static/css/457a162751b448fd.css" data-n-g=""/>
+    <link rel="preload" href="/en-in/_next/static/css/457a162751b448fd.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
@@ -34,10 +36,15 @@
         <img id="ipi" src="minus-icon.svg" alt="">
        <h1>___Enjoy 30% Savings at Our ___<br>
                Newest Hotels</h1>
-
-               <p id="paragraph">Idulge the explorer in you and set out to discover our newest hotels and novel
-                experiences. Enjoy exclusive 30% savings<button id="rotate-button"><img src="more.svg"></button></p>
-
+               <div class="ctn">
+               <div class="abc">
+                <span class="ghi">Indulge the explorer in you and set out to discover our newest hotels and novel experiences. Enjoy exclusive 30% savings</span>
+                <span class="xyz"><img src="more.svg"></span>
+            </div>
+            <div class="def">
+                <span class="jkl">on breakfast-inclusive rates and celebrate new beginnings with us.</span>
+            </div>
+               </div>
     </div>    
 
     <div class="val">
@@ -67,6 +74,7 @@
                 </div>
                 <div class="form-group">
                     <input type="text" id="date-range" placeholder="Select date range">
+
                     
                 </div>
                 <div class="container">
@@ -114,57 +122,98 @@
             </ul>
         </div>
         <h1>Participating Hotels</h1>
-        
-        <input type="text" id="sbox" class="sbox" placeholder="Search images...">
+       
+        <div class="sear"> <input type="text" id="sbox" class="sbox" placeholder="Search images...">
+        <input type="text" class="sbox" placeholder="Select an option">
+
+         </div>
         
 
         <div class="img-lst">
+            <div class="Extra">
             <div class="img-item" data-keys="Taj City Centre, Patna">
-                <img class="ii"src="Taj1.png" alt="Cat">
-                <div class="cont">
-                    <p>Embrace the allure of Taj City Centre, Patna – where history</p>
-                    <span class="text" data-text=" intertwines with luxury in Bihar's capital. Luxurious rooms, exquisite dining, serene spa, and event spaces await, inviting you to indulge"></span>
-                    <button class="btn" data-text="intertwines with luxury in Bihar's capital. Luxurious rooms, exquisite dining, serene spa, and event spaces await, inviting you to indulge"><img src="more.svg"></button>
+                <img class="ii" src="Taj1.png" alt="Cat">
+                <div><h3> Taj City Centre, Patna</h3></div>
+                <div class="text-container">
+                    <p class="paragraph">Embrace the allure of Taj City Centre, Patna where history<button class="rotate-button"><img src="more.svg"></button></p>
                 </div>
             </div>    
             <div class="img-item" data-keys="Taj Malabar Resort & Spa, Cochin">
                 <img class="ii" src="pic2.webp" alt="Dog">
-                <div class="cont">
-                    <p>Dive into bliss at Taj Malabar Resort & Spa, Kochi, where every</p>
-                    <span class="text" data-text=" moment is an escape, a memory, and an embrace of the serene waters of Kochi.""></span>
-                    <button class="btn" data-text=" moment is an escape, a memory, and an embrace of the serene waters of Kochi."><img src="more.svg"></button>         
+                <div><h3> Taj Malabar Resort & Spa, Cochin</h3></div>
+                <div class="text-container">
+                    <p class="paragraph">Dive into bliss at Taj Malabar Resort & Spa, Kochi, where every<button class="rotate-button"><img src="more.svg"></button></p>
                 </div>
             </div>    
             <div class="img-item" data-keys="Ginger Nagpur, Airport Road">
-                <img class="ii"src="pic3.webp" alt="Bird">
-                <div class="cont">
-                    <p>Explore the charm of Nagpur, while you unwind to an unparallel</p>
-                    <span class="text" data-text="and convenient experience at Ginger, a short drive away from Nagpur Airport."></span>
-                    <button class="btn" data-text="and convenient experience at Ginger, a short drive away from Nagpur Airport."><img src="more.svg"></button> 
+                <img class="ii" src="pic3.webp" alt="Bird">
+                <div><h3> Ginger Nagpur, Airport Road</h3></div>
+                <div class="text-container">
+                    <p class="paragraph">Explore the charm of Nagpur, while you unwind to an unparalleled<button class="rotate-button"><img src="more.svg"></button></p>
                 </div>
             </div>
+            </div>
+            <div class="ext">
             <div class="img-item" data-keys="amã Stays & Trails Butterfly Villa, Nashik">
                 <img class="ii" src="pic4.webp" alt="Fish">
-                <div class="cont">
-                    <p>Nestled within Deolali's tranquil surroundings in Nashik, Butterfly </p>
-                    <span class="text" data-text="Villa offers a serene sanctuary for nature lovers seeking refuge from urban chaos"></span>
-                    <button class="btn" data-text="Villa offers a serene sanctuary for nature lovers seeking refuge from urban chaos"><img src="more.svg"></button>          
+                <div><h3> amã Stays & Trails Butterfly Villa, Nashik</h3></div>
+                <div class="text-container">
+
+                    <p class="paragraph">Nestled within Deolali's tranquil surroundings in Nashik, Butterfly <button class="rotate-button"><img src="more.svg"></button></p>
                 </div>
             </div>     
-            <div class="img-item" data-keys="amã Stays & Trails Vivid Foliage, Kasaragod">
+            <div class="img-item" id="uniq" data-keys="amã Stays & Trails Vivid Foliage, Kasaragod">
                 <img class="ii" src="pic5.webp" alt="Horse">
-                <div class="cont">
-                    <p>This villa in Kerala has an infinity pool with a scenic view</p>
-                    <span class="text" data-text=" a rainwater harvesting pond, and spacious lawns with landscaped paths. The entry façade includes a mesh wall and a swing seating area, providing an ideal spot to capture the picturesque Western Ghats for the guests."></span>
-                    <button class="btn" data-text=" a rainwater harvesting pond, and spacious lawns with landscaped paths. The entry façade includes a mesh wall and a swing seating area, providing an ideal spot to capture the picturesque Western Ghats for the guests."><img src="more.svg"></button>         
+                <div><h3>amã Stays & Trails Vivid Foliage, Kasaragod</h3></div>
+                <div class="text-container">
+                    <p class="paragraph">This villa in Kerala has an infinity pool with a scenic view <button class="rotate-button"><img src="more.svg"></button></p>
                 </div>
             </div>
-    
-        </div> 
-  
-        
+            </div>
+        </div>
+        <div class="cosmos">
+            <div class="nebula">
+                <img id="cosmic-bg" src="101.webp" alt="Background Image">
+                <div class="black-hole"></div>
+            </div>
+            <div class="galaxy">
+                <button id="left-star" class="star">Left</button>
+                <div class="planetary-orbit">
+                    <img id="planet-img" src="101.webp" alt="Display Image">
+                    <div class="text-vortex">
+                        <h4 id="planet-heading">NEUPASS</h4> <!-- Add heading here -->
+                        <p id="planet-desc">Enjoy special room rates, earn and redeem NeuCoins and indulge in exceptional benefits with NeuPass Loyalty Program.</p>
+                        <button class="text-btn" id="info-star" style="display: none;"><img src="more.svg"></button>
+                        <div class="extended-text" id="extended-text" style="display: none;">
+                            <p>Extended text content goes here. This section appears when the button is clicked.</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="right-star" class="star">Right</button>
+            </div>
+        </div>
         <script src="J.js"></script>
 <footer>
+    <div class="upper">
+    <div>
+        
+     <div class="fti"><img src="ihcl.png" alt="">
+        <p id="lml">SUBSCRIBE FOR LATEST UPDATES</p>
+       <div> <input type="email" id="email" placeholder="Enter your email">
+        <button class="sub">SUBSCRIBE</button>
+       </div>
+     <p id="bk">FOR BOOKINGS CONTACT</p>
+    <div class="inf"> <p>1-800-111-825<span>reservations@ihcltata.com</span></p></div>
+    <p id="bbk">CUSTOMER SUPPORT</p>
+    <div class="infd"><p>contacttaj@tajhotels.com <span>website.feedback@tajhotels.com</span></p></div>
+    </div>
+    </div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+
 </footer>
 </body>
 </html>
