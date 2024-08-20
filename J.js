@@ -9,37 +9,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('scroll', function() {
+   
+    const scrollPosition = window.scrollY;
+   
+    const documentHeight = document.documentElement.scrollHeight;
+
+    const viewportHeight = window.innerHeight;
+
     
-    const headers = document.querySelectorAll('.header');
+    const scrollPercentage = (scrollPosition / (documentHeight - viewportHeight)) * 100;
 
-    function handleScroll() {
-       
-        const documentHeight = document.documentElement.scrollHeight;
 
-       
-        const viewportHeight = window.innerHeight;
+    const headElement = document.querySelector('.head');
+    const ttElement = document.querySelector('.tt');
+   
+    const otherElement1 = document.querySelector('.active');
+    const otherElement2 = document.querySelector('.dt a');
+    const imageElement = document.querySelector('.tt img');
+    const activeAnchorElements = document.querySelectorAll('.active a'); 
 
-        
-        const scrollTop = window.scrollY || window.pageYOffset;
-        const scrollPercent = (scrollTop / (documentHeight - viewportHeight)) * 100;
+    
+    if (scrollPercentage > 5) {
+      headElement.classList.add('scrolled');
+      ttElement.classList.add('scrolled');
+     
+      otherElement1.classList.add('scrolled');
+      otherElement2.classList.add('scrolled');
+     
+      imageElement.src = 'Tajv2.png'; 
 
-        
-        headers.forEach(header => {
-            if (scrollPercent > 50) { 
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+      activeAnchorElements.forEach(anchor => {
+        anchor.classList.add('scrolled');
+      });
+    } else {
+      headElement.classList.remove('scrolled');
+      ttElement.classList.remove('scrolled');
+      activeAnchorElements.forEach(anchor => {
+        anchor.classList.remove('scrolled');
+      });
+      otherElement1.classList.remove('scrolled');
+      otherElement2.classList.remove('scrolled');
+      // Revert the image source
+      imageElement.src = 'Taj.png'; 
     }
-
-   
-    window.addEventListener('scroll', handleScroll);
-
-   
-    handleScroll();
-});
+  });
 document.querySelectorAll('.img-item').forEach(item => {
     let rotation = 0;
     let extended = false;
@@ -345,3 +359,21 @@ function toggleText(button) {
 
 // Initialize content
 updateSpaceContent();
+
+
+
+
+function togDro() {
+    var Nit = document.querySelector('.Nit');
+    var Ura = document.querySelector('.Ura');
+
+    if (Nit.style.display === 'block') {
+        Nit.style.display = 'none';
+        Ura.textContent = '+';
+        Ura.style.transform = 'rotate(0deg)';
+    } else {
+        Nit.style.display = 'block';
+        Ura.textContent = '-';
+        Ura.style.transform = 'rotate(180deg)';
+    }
+}
