@@ -1,3 +1,26 @@
+function showDropdown() {
+    document.getElementById('dropdown').style.display = 'block';
+}
+
+function hideDropdown() {
+    document.getElementById('dropdown').style.display = 'none';
+}
+
+function selectOption(option) {
+    document.getElementById('search-bar').value = option;
+    hideDropdown(); // Hide dropdown after selection
+}
+
+// Hide dropdown when clicking outside
+document.addEventListener('click', function(event) {
+    const searchBar = document.getElementById('search-bar');
+    const dropdown = document.getElementById('dropdown');
+    if (!searchBar.contains(event.target) && !dropdown.contains(event.target)) {
+        hideDropdown();
+    }
+});
+
+
 document.addEventListener('DOMContentLoaded', function () {
     
     const buttons = document.querySelectorAll('.rotate-button');
