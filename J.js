@@ -119,102 +119,41 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-let roomId = 1;
-let rooms = {};
-
-function updateTotalSummary() {
-    let totalAdults = 0;
-    let totalChildren = 0;
-    let totalRooms = Object.keys(rooms).length;
-
-    for (let id in rooms) {
-        totalAdults += rooms[id].adults;
-        totalChildren += rooms[id].children;
-    }
-
-    document.getElementById('totalAdults').innerText = 'Total Adults: ' + totalAdults;
-    document.getElementById('totalChildren').innerText = 'Total Children: ' + totalChildren;
-    document.getElementById('totalRooms').innerText = 'Total Rooms: ' + totalRooms;
-}
-
-function changeCount(roomId, type, amount) {
-    let room = rooms[roomId];
-    room[type] += amount;
-    if (room[type] < 0) room[type] = 0;
-    document.getElementById(`${roomId}-${type}Counter`).innerText = room[type] + ' ' + type;
-    updateTotalSummary();
-}
-
-function removeRoom(roomId) {
-    let roomDiv = document.getElementById(`room${roomId}`);
-    if (roomDiv) {
-        roomDiv.remove();
-        delete rooms[roomId];
-        updateTotalSummary();
-
-    }
-}
-
-function createRoom() {
-    let roomDiv = document.createElement('div');
-    roomDiv.classList.add('room');
-    roomDiv.id = `room${roomId}`;
-
-    roomDiv.innerHTML = `
-        <h3>Room ${roomId}</h3>
-        <div class="dropdown">
-            <button class="button" onclick="changeCount(${roomId}, 'children', -1)">-</button>
-            <span class="counter" id="${roomId}-childrenCounter">0 children</span>
-            <button class="button" onclick="changeCount(${roomId}, 'children', 1)">+</button>
-        </div>
-        <div class="dropdown">
-            <button class="button" onclick="changeCount(${roomId}, 'adults', -1)">-</button>
-            <span class="counter" id="${roomId}-adultsCounter">0 adults</span>
-            <button class="button" onclick="changeCount(${roomId}, 'adults', 1)">+</button>
-        </div>
-        <button class="remove-room-button" onclick="removeRoom(${roomId})">Remove Room</button>
-    `;
-
-    document.getElementById('roomsContainer').appendChild(roomDiv);
-
-    rooms[roomId] = { children: 0, adults: 0 };
-    roomId++
-    updateTotalSummary();
-}
 
 
-document.getElementById('toggleButton').addEventListener('click', function(event) {
-    event.stopPropagation(); 
-    const dropdown = document.getElementById('countersDropdown');
+
+// document.getElementById('toggleButton').addEventListener('click', function(event) {
+//     event.stopPropagation(); 
+//     const dropdown = document.getElementById('countersDropdown');
     
-    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-        dropdown.style.display = 'block';
-    } else {
-        dropdown.style.display = 'none';
-    }
-});
+//     if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+//         dropdown.style.display = 'block';
+//     } else {
+//         dropdown.style.display = 'none';
+//     }
+// });
 
 
-document.getElementById('closeButton').addEventListener('click', function() {
-    document.getElementById('countersDropdown').style.display = 'none';
-});
+// document.getElementById('closeButton').addEventListener('click', function() {
+//     document.getElementById('countersDropdown').style.display = 'none';
+// });
 
-document.addEventListener('click', function(event) {
-    const dropdown = document.getElementById('countersDropdown');
-    if (!dropdown.contains(event.target) && event.target.id !== 'toggleButton') {
-        dropdown.style.display = 'none';
-    }
-});
-
-
-document.getElementById('countersDropdown').addEventListener('click', function(event) {
-    event.stopPropagation();
-});
+// document.addEventListener('click', function(event) {
+//     const dropdown = document.getElementById('countersDropdown');
+//     if (!dropdown.contains(event.target) && event.target.id !== 'toggleButton') {
+//         dropdown.style.display = 'none';
+//     }
+// });
 
 
-document.getElementById('addRoomButton').addEventListener('click', function() {
-    createRoom();
-});
+// document.getElementById('countersDropdown').addEventListener('click', function(event) {
+//     event.stopPropagation();
+// });
+
+
+// document.getElementById('addRoomButton').addEventListener('click', function() {
+//     createRoom();
+// });
 
 document.getElementById('tbutton').addEventListener('click', function() {
     var list = document.getElementById('myList');
@@ -377,3 +316,92 @@ function togDro() {
         Ura.style.transform = 'rotate(180deg)';
     }
 }
+
+
+document.getElementById('terraInput').addEventListener('click', function() {
+    var dropdown = document.getElementById('dropdownMars');
+    if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
+    }
+});
+
+document.addEventListener('click', function(event) {
+    var dropdown = document.getElementById('dropdownMars');
+    var input = document.getElementById('terraInput');
+    if (!input.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+    }
+});
+
+function updateInput() {
+    var earthSurface = document.getElementById('earthSurface');
+    var rooms = earthSurface.children.length;
+    var adultCount = 0;
+    var childCount = 0;
+
+    Array.from(earthSurface.children).forEach(room => {
+        adultCount += parseInt(room.querySelector('[id^="adultCount"]').textContent, 10);
+        childCount += parseInt(room.querySelector('[id^="childCount"]').textContent, 10);
+    });
+
+    var input = document.getElementById('terraInput');
+    input.value = `Rooms: ${rooms}, Adults: ${adultCount}, Children: ${childCount}`;
+}
+
+function changeCount(type, change) {
+    var countElement = document.getElementById(type);
+    if (countElement) {
+        var currentCount = parseInt(countElement.textContent, 10);
+        var newCount = currentCount + change;
+        if (newCount >= 0) { // Ensure count does not go below 0
+            countElement.textContent = newCount;
+            updateInput(); // Update the input box with the latest counts
+        }
+    }
+}
+
+document.getElementById('addRoomButton').addEventListener('click', function() {
+    var earthSurface = document.getElementById('earthSurface');
+    var roomCount = earthSurface.children.length + 1; // Adjust for room count
+    var roomDiv = document.createElement('div');
+    roomDiv.className = 'earth-room';
+    roomDiv.innerHTML = `
+        <div class="dropdown-header">Room ${roomCount}</div>
+        <div class="earth-counters">
+            <div class="earth-counter">
+                <span>Adults:</span>
+                <button class="counter-button" onclick="changeCount('adultCount_${roomCount}', -1)">-</button>
+                <span id="adultCount_${roomCount}">0</span>
+                <button class="counter-button" onclick="changeCount('adultCount_${roomCount}', 1)">+</button>
+            </div>
+            <div class="earth-counter">
+                <span>Children:</span>
+                <button class="counter-button" onclick="changeCount('childCount_${roomCount}', -1)">-</button>
+                <span id="childCount_${roomCount}">0</span>
+                <button class="counter-button" onclick="changeCount('childCount_${roomCount}', 1)">+</button>
+            </div>
+        </div>
+        <button class="delete-button" onclick="removeLastRoom()">X</button>
+    `;
+    earthSurface.appendChild(roomDiv);
+    updateInput(); // Update the input box with the latest counts after adding a new room
+});
+
+function removeLastRoom() {
+    var earthSurface = document.getElementById('earthSurface');
+    var lastRoom = earthSurface.lastElementChild;
+    if (lastRoom) {
+        earthSurface.removeChild(lastRoom);
+        updateInput(); // Update the input box with the latest counts after removing a room
+    }
+}
+
+// Ensure the dropdown does not disappear when clicking inside it
+document.getElementById('dropdownMars').addEventListener('click', function(event) {
+    event.stopPropagation(); // Prevent click events inside the dropdown from closing it
+});
+
+// Initialize the input box with the initial room counts
+updateInput();

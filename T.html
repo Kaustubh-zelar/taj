@@ -78,25 +78,37 @@
 
                     
                 </div>
-                <div class="container">
-                    <div class="header">
-                        <div class="total-summary">
-                            <p id="totalAdults">Total Adults: 0</p>
-                            <p id="totalChildren">Total Children: 0</p>
-                            <p id="totalRooms">Total Rooms: 0</p>
+                <div class="terra">
+                    <input id="terraInput" type="text" readonly placeholder="Click to add rooms">
+                    <div id="dropdownMars" class="dropdown-mars">
+                        <div id="earthSurface" class="earth-surface">
+                            <!-- Initial Room -->
+                            <div class="earth-room">
+                                <div class="dropdown-header">Room 1</div>
+                                <div class="earth-counters">
+                                    <div class="earth-counter">
+                                        <span>Adults:</span>
+                                        <button class="counter-button" onclick="changeCount('adultCount_1', -1)">-</button>
+                                        <span id="adultCount_1">0</span>
+                                        <button class="counter-button" onclick="changeCount('adultCount_1', 1)">+</button>
+                                    </div>
+                                    <div class="earth-counter">
+                                        <span>Children:</span>
+                                        <button class="counter-button" onclick="changeCount('childCount_1', -1)">-</button>
+                                        <span id="childCount_1">0</span>
+                                        <button class="counter-button" onclick="changeCount('childCount_1', 1)">+</button>
+                                    </div>
+                                </div>
+                                <button class="delete-button" onclick="removeLastRoom()">X</button>
+                            </div>
                         </div>
-                        <button class="toggle-button" id="toggleButton">Show Counters</button>
-                    </div>
-                    
-                    <!-- Dropdown modal for counters -->
-                    <div id="countersDropdown" class="dropdown-modal">
-                        <button id="closeButton" class="close-button">X</button>
-                        <div id="roomsContainer"></div>
-                        <button id="addRoomButton">Add Room</button>
+                        <div class="add-room">
+                            <button id="addRoomButton">Add Room</button>
+                        </div>
                     </div>
                 </div>
+            </div>
             
-                </div>
                 <div><button id="mb">LOGIN/JOIN</button></div>
         </div>
     </div>
@@ -178,7 +190,7 @@
                 <div class="black-hole"></div>
             </div>
             <div class="galaxy">
-                <button id="left-star" class="star">Left</button>
+                <button id="left-star" class="star"><img src="" alt="left"></button>
                 <div class="planetary-orbit">
                     <img id="planet-img" src="101.webp" alt="Display Image">
                     <div class="text-vortex">
@@ -190,7 +202,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="right-star" class="star">Right</button>
+                <button id="right-star" class="star"><img src="" alt="right"></button>
             </div>
         </div>
         <script src="J.js"></script>
