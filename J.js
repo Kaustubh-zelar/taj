@@ -306,6 +306,8 @@ function updateSpaceContent() {
 
     if (showButton) {
         infoStar.style.display = 'block';
+        infoStar.style.background= 'none';
+        infoStar.style.border='none';
         extendedText.style.display = 'none';
         infoStar.classList.remove('rotate');
     } else {
