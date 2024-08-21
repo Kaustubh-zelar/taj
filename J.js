@@ -28,6 +28,7 @@ window.addEventListener('scroll', function() {
     const otherElement2 = document.querySelector('.dt a');
     const imageElement = document.querySelector('.tt img');
     const activeAnchorElements = document.querySelectorAll('.active a'); 
+    const activeAnchorElements1 = document.querySelectorAll('.active button'); 
 
     
     if (scrollPercentage > 5) {
@@ -36,17 +37,26 @@ window.addEventListener('scroll', function() {
      
       otherElement1.classList.add('scrolled');
       otherElement2.classList.add('scrolled');
+      
+    
      
       imageElement.src = 'Tajv2.png'; 
+      activeAnchorElements1.forEach(button =>{
+        button.classList.add('scrolled')
+      });
 
       activeAnchorElements.forEach(anchor => {
         anchor.classList.add('scrolled');
+        
       });
     } else {
       headElement.classList.remove('scrolled');
       ttElement.classList.remove('scrolled');
       activeAnchorElements.forEach(anchor => {
         anchor.classList.remove('scrolled');
+      });
+      activeAnchorElements1.forEach(button =>{
+        button.classList.remove('scrolled')
       });
       otherElement1.classList.remove('scrolled');
       otherElement2.classList.remove('scrolled');

@@ -99,6 +99,12 @@ body{
  
     color: black;
 }
+
+.active button.scrolled{
+    color: #ad8b3a;
+}
+
+
 .Content p{
     text-align: center;
 
